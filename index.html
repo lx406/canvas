@@ -1,11 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>welcome to canvas</title>
+  <style>
+    body {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    canvas {
+      box-shadow: 0 0 10px #ccc;
+      margin: 0 auto;
+    }
+  </style>
 </head>
-<body>
-  <div>let's go</div>
+
+<body onload="draw()">
+  <canvas id="canvas" width="800" height="600">let's go</canvas>
+  <script>
+    function draw() {
+      let canvas = document.getElementById('canvas');
+      if (canvas.getContext) {
+        let ctx = canvas.getContext('2d');
+        ctx.fillStyle = 'rgb(200, 0, 0)';
+        ctx.fillRect(10, 10, 200, 200);
+        ctx.clearRect(30, 30, 160, 160);
+        ctx.strokeStyle = 'rgb(200,0,0)';
+        ctx.strokeRect(40, 40, 140, 140);
+      }
+    }
+
+  </script>
 </body>
+
 </html>

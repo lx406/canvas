@@ -25,12 +25,17 @@
       let canvas = document.getElementById('canvas');
       if (canvas.getContext) {
         let ctx = canvas.getContext('2d');
-        ctx.fillStyle = 'rgb(200, 0, 0)';
-        ctx.fillRect(10, 10, 200, 200);
-        ctx.clearRect(30, 30, 160, 160);
-        ctx.strokeStyle = 'rgb(200,0,0)';
-        ctx.lineWidth = 2;
-        ctx.strokeRect(40, 40, 140, 140);
+        ctx.strokeRect(10,10,200,200);
+        ctx.moveTo(30,30);
+        ctx.lineTo(30,180);
+        ctx.lineTo(180,30);
+        ctx.closePath();
+        ctx.fill();
+        ctx.moveTo(40,190);
+        ctx.lineTo(190,190);
+        ctx.lineTo(190,40);
+        ctx.closePath();
+        ctx.stroke();
       }
     }
 
